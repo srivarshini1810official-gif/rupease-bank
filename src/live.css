@@ -1,8 +1,1234 @@
-.live-bank-content { display:grid; gap:16px; padding-bottom:24px }
-.live-bank-content .page-head { margin-bottom: 2px }
-.live-transfer, .live-sign-in { width:min(100%,690px) }
-.live-bank-content .accounts:empty { display:none }
-.live-pending.MuiChip-root,.live-processing.MuiChip-root { background:#fff1d5;color:#844d13 }
-.live-rejected.MuiChip-root,.live-manual_review.MuiChip-root { background:#fae8ec;color:#94364d }
-.live-mode-actions { display:flex; align-items:center; gap:9px }
-.live-bank-layout .MuiAlert-message { overflow-wrap:anywhere }
+
+/* =========================================
+   RUPEASE BANK - PREMIUM LOGIN EXPERIENCE
+   ========================================= */
+
+.live-bank-content {
+  display: grid;
+  gap: 16px;
+  padding-bottom: 24px;
+}
+
+.live-bank-content .page-head {
+  margin-bottom: 2px;
+}
+
+.live-transfer,
+.live-sign-in {
+  width: min(100%, 690px);
+}
+
+.live-bank-content .accounts:empty {
+  display: none;
+}
+
+.live-pending.MuiChip-root,
+.live-processing.MuiChip-root {
+  background: #fff1d5;
+  color: #844d13;
+}
+
+.live-rejected.MuiChip-root,
+.live-manual_review.MuiChip-root {
+  background: #fae8ec;
+  color: #94364d;
+}
+
+.live-mode-actions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.live-bank-layout .MuiAlert-message {
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================
+   LOGIN PAGE LAYOUT
+   ========================================= */
+
+.login-content {
+  max-width: 1500px;
+  padding: 27px 34px 34px;
+}
+
+.login-screen {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(340px, 0.82fr);
+  gap: clamp(25px, 4vw, 55px);
+  align-items: center;
+  min-height: min(690px, calc(100vh - 190px));
+}
+
+
+/* =========================================
+   LEFT WELCOME PANEL
+   ========================================= */
+
+.login-intro {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 560px;
+  padding: clamp(30px, 4vw, 54px);
+  border-radius: 23px;
+  background:
+    radial-gradient(
+      circle at 88% 78%,
+      rgba(91, 126, 218, 0.28),
+      transparent 32%
+    ),
+    linear-gradient(
+      145deg,
+      #091735 0%,
+      #102653 53%,
+      #1e4389 100%
+    );
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 18px 45px rgba(12, 29, 69, 0.14);
+}
+
+.login-intro::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 370px;
+  height: 370px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 50%;
+  right: -150px;
+  top: -145px;
+  box-shadow:
+    0 0 0 35px rgba(255,255,255,0.025),
+    0 0 0 70px rgba(255,255,255,0.025);
+}
+
+.login-intro-top {
+  position: relative;
+  z-index: 2;
+}
+
+.login-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 13px;
+  border: 1px solid rgba(255,255,255,0.20);
+  border-radius: 30px;
+  background: rgba(255,255,255,0.08);
+  color: #e7d6a0;
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 0.14em;
+}
+
+.login-intro h1 {
+  max-width: 520px;
+  margin-top: 38px;
+  color: #fff;
+  font-size: clamp(36px, 4vw, 53px);
+  line-height: 1.12;
+  letter-spacing: -0.055em;
+  font-weight: 790;
+}
+
+.login-intro h1 span {
+  display: block;
+  color: #e5c77e;
+}
+
+.login-description {
+  max-width: 440px;
+  margin-top: 19px;
+  color: #d0d9ec;
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+
+/* =========================================
+   LOGIN FEATURES
+   ========================================= */
+
+.login-features {
+  display: grid;
+  gap: 19px;
+  margin-top: 34px;
+  max-width: 440px;
+}
+
+.login-features > div {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.feature-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 11px;
+  background: rgba(255,255,255,0.09);
+  color: #e5c77e;
+}
+
+.login-features strong,
+.login-features small {
+  display: block;
+}
+
+.login-features strong {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.login-features small {
+  margin-top: 4px;
+  color: #b9c8e2;
+  font-size: 11px;
+}
+
+.feature-check {
+  margin-left: auto;
+  color: #e5c77e;
+  flex-shrink: 0;
+}
+
+
+/* =========================================
+   DECORATIVE BANK CARD
+   ========================================= */
+
+.login-decoration {
+  position: relative;
+  min-height: 135px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 22px 0 5px;
+}
+
+.decoration-orbit {
+  position: absolute;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 50%;
+  transform: rotate(-18deg);
+}
+
+.orbit-one {
+  width: 280px;
+  height: 110px;
+}
+
+.orbit-two {
+  width: 350px;
+  height: 145px;
+}
+
+.decoration-card {
+  position: relative;
+  z-index: 2;
+  width: min(330px, 90%);
+  min-height: 145px;
+  padding: 20px 23px;
+  border: 1px solid rgba(255,255,255,0.32);
+  border-radius: 15px;
+  background: linear-gradient(
+    125deg,
+    rgba(255,255,255,0.20),
+    rgba(255,255,255,0.07)
+  );
+  box-shadow: 0 15px 35px rgba(0,0,0,0.16);
+  backdrop-filter: blur(12px);
+  transform: rotate(-4deg);
+}
+
+.decoration-card-top,
+.decoration-card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.decoration-card-top {
+  color: #fff;
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: 0.12em;
+}
+
+.decoration-chip {
+  width: 35px;
+  height: 26px;
+  margin-top: 20px;
+  border: 1px solid #d8c38e;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #d9c58e, #a58b51);
+}
+
+.decoration-card-bottom {
+  margin-top: 15px;
+  color: #f0dfb1;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.10em;
+}
+
+.login-intro-footer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding-top: 17px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  color: #b7c6df;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+
+/* =========================================
+   RIGHT LOGIN COLUMN
+   ========================================= */
+
+.login-column {
+  width: 100%;
+  max-width: 470px;
+  margin: 0 auto;
+}
+
+.login-card.panel {
+  width: 100%;
+  padding: 34px;
+  overflow: visible;
+  border: 1px solid #e6eaf1;
+  border-radius: 19px;
+  background: #fff;
+  box-shadow: 0 15px 45px rgba(20, 37, 75, 0.075);
+}
+
+.login-card-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 29px;
+}
+
+.login-card-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  border-radius: 13px;
+  background: #edf1fb;
+  color: #17366f;
+}
+
+.login-card-kicker {
+  display: block;
+  margin: 2px 0 8px;
+  color: #9a8050;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.login-card-heading h2 {
+  color: #10234b;
+  font-size: 24px;
+  font-weight: 790;
+  letter-spacing: -0.045em;
+}
+
+.login-card-heading p {
+  margin-top: 8px;
+  color: #748096;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   LOGIN FORM FIELDS
+   ========================================= */
+
+.login-form {
+  display: grid;
+  gap: 19px;
+  padding: 0;
+}
+
+.login-form .MuiInputLabel-root {
+  color: #77839a;
+  font-size: 13px;
+}
+
+.login-form .MuiOutlinedInput-root {
+  min-height: 54px;
+  border-radius: 10px;
+  background: #fbfcfe;
+  color: #172846;
+  font-size: 14px;
+}
+
+.login-form .MuiOutlinedInput-notchedOutline {
+  border-color: #dfe5ef;
+}
+
+.login-form .MuiOutlinedInput-root:hover
+.MuiOutlinedInput-notchedOutline {
+  border-color: #9eacc4;
+}
+
+.login-form .MuiOutlinedInput-root.Mui-focused {
+  background: #fff;
+}
+
+.login-form .MuiOutlinedInput-root.Mui-focused
+.MuiOutlinedInput-notchedOutline {
+  border-color: #183a79;
+  border-width: 1.5px;
+}
+
+.login-form .MuiInputLabel-root.Mui-focused {
+  color: #183a79;
+}
+
+.login-form .MuiButton-root {
+  min-height: 51px;
+  border-radius: 10px;
+  background: linear-gradient(110deg, #102653, #234a94);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 750;
+  box-shadow: 0 7px 16px rgba(21, 54, 111, 0.17);
+}
+
+.login-form .MuiButton-root:hover {
+  background: #0d2046;
+  box-shadow: 0 9px 19px rgba(21, 54, 111, 0.23);
+}
+
+.login-form .MuiButton-root:disabled {
+  background: #8795b1;
+  color: #fff;
+}
+
+.login-submit {
+  margin-top: 5px !important;
+}
+
+
+/* =========================================
+   SECURITY NOTE AND HELP TEXT
+   ========================================= */
+
+.login-security-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 24px;
+  padding-top: 19px;
+  border-top: 1px solid #edf0f5;
+  color: #738096;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.login-security-note svg {
+  flex-shrink: 0;
+  color: #a4874e;
+  margin-top: 1px;
+}
+
+.login-help {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 19px;
+  color: #77839a;
+  font-size: 11px;
+}
+
+.login-help svg {
+  color: #a4874e;
+}
+
+
+/* =========================================
+   WORKER CONNECTION PANEL
+   ========================================= */
+
+.connection-card .login-form .MuiButton-root {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+
+@media (max-width: 1050px) {
+  .login-content {
+    padding-inline: 22px;
+  }
+
+  .login-screen {
+    grid-template-columns: minmax(0, 1fr) minmax(310px, 0.9fr);
+    gap: 22px;
+  }
+
+  .login-intro {
+    padding: 30px;
+  }
+
+  .login-card.panel {
+    padding: 27px;
+  }
+
+  .login-intro h1 {
+    font-size: 38px;
+  }
+}
+
+@media (max-width: 780px) {
+  .login-screen {
+    grid-template-columns: 1fr;
+    gap: 23px;
+    min-height: auto;
+  }
+
+  .login-intro {
+    min-height: auto;
+    padding: 32px;
+  }
+
+  .login-intro h1 {
+    max-width: 550px;
+    font-size: 39px;
+  }
+
+  .login-description {
+    max-width: 550px;
+  }
+
+  .login-features {
+    grid-template-columns: 1fr;
+  }
+
+  .login-decoration {
+    min-height: 120px;
+  }
+
+  .login-column {
+    max-width: 560px;
+  }
+}
+
+@media (max-width: 680px) {
+  .login-content {
+    padding: 19px 13px 25px;
+  }
+
+  .login-intro {
+    padding: 25px 21px;
+    border-radius: 17px;
+  }
+
+  .login-intro h1 {
+    margin-top: 25px;
+    font-size: 34px;
+  }
+
+  .login-description {
+    font-size: 13px;
+  }
+
+  .login-features {
+    gap: 16px;
+    margin-top: 25px;
+  }
+
+  .login-intro-footer {
+    flex-wrap: wrap;
+    font-size: 8px;
+  }
+
+  .login-card.panel {
+    padding: 24px 19px;
+    border-radius: 15px;
+  }
+
+  .login-card-heading h2 {
+    font-size: 21px;
+  }
+
+  .decoration-card {
+    width: 275px;
+  }
+
+  .orbit-two {
+    width: 300px;
+  }
+}
+
+/* =========================================
+   RUPEASE PREMIUM CUSTOMER DASHBOARD
+   ========================================= */
+
+.live-bank-layout .sidebar {
+  background: #ffffff;
+  border-right: 1px solid #e2e8f2;
+}
+
+.live-bank-layout nav {
+  margin-top: 25px;
+  gap: 8px;
+}
+
+.live-bank-layout nav button {
+  min-height: 45px;
+  border-radius: 10px;
+  font-size: 13px;
+  transition: all 0.2s ease;
+}
+
+.live-bank-layout nav button.active {
+  background: #edf1fb;
+  color: #17366f;
+  font-weight: 750;
+  box-shadow: inset 3px 0 #c5a35e;
+}
+
+.live-bank-layout nav button:hover {
+  background: #f0f3fa;
+  color: #17366f;
+}
+
+.premium-page-head {
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.dashboard-eyebrow {
+  display: block;
+  margin-bottom: 8px;
+  color: #a4874e;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+}
+
+.premium-page-head h1 {
+  color: #10234b;
+  font-size: clamp(27px, 3vw, 36px);
+  letter-spacing: -0.045em;
+}
+
+.premium-page-head p {
+  color: #71809a;
+  font-size: 13px;
+}
+
+.premium-page-head .MuiButton-root {
+  border-color: #dce3f0;
+  color: #17366f;
+  border-radius: 9px;
+}
+
+
+/* SUMMARY CARDS */
+
+.dashboard-summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 15px;
+  margin-bottom: 29px;
+}
+
+.summary-card {
+  position: relative;
+  min-width: 0;
+  min-height: 137px;
+  padding: 21px;
+  overflow: hidden;
+  border: 1px solid #e5eaf2;
+  border-radius: 14px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.summary-card > span {
+  color: #71809a;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.summary-card > strong {
+  color: #142b56;
+  font-size: clamp(20px, 2vw, 27px);
+  font-weight: 790;
+  letter-spacing: -0.04em;
+  overflow-wrap: anywhere;
+}
+
+.summary-card > small {
+  color: #8a95a8;
+  font-size: 10px;
+}
+
+.summary-card > svg {
+  position: absolute;
+  right: 17px;
+  top: 19px;
+  color: #b69a61;
+  opacity: 0.8;
+}
+
+.summary-primary {
+  background: linear-gradient(125deg, #10234b, #254b91);
+  border-color: transparent;
+}
+
+.summary-primary > span,
+.summary-primary > small {
+  color: #d2def1;
+}
+
+.summary-primary > strong {
+  color: #ffffff;
+}
+
+.summary-primary > svg {
+  color: #e5c77e;
+}
+
+
+/* DASHBOARD SECTIONS */
+
+.dashboard-section {
+  display: grid;
+  gap: 19px;
+}
+
+.dashboard-section .section-heading {
+  margin-bottom: 13px;
+}
+
+.dashboard-section .section-heading p {
+  margin-top: 5px;
+  color: #78859a;
+  font-size: 12px;
+}
+
+.dashboard-section .section-heading h2 {
+  color: #142b56;
+}
+
+.dashboard-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 23px;
+}
+
+.dashboard-action h2 {
+  color: #142b56;
+  font-size: 19px;
+}
+
+.dashboard-action p {
+  margin-top: 6px;
+  color: #77839a;
+  font-size: 12px;
+}
+
+.dashboard-action .MuiButton-root {
+  min-height: 43px;
+  padding-inline: 19px;
+  background: #17366f;
+  border-radius: 9px;
+  white-space: nowrap;
+}
+
+.dashboard-action .MuiButton-root:hover {
+  background: #10234b;
+}
+
+
+/* TRANSFER AND HISTORY PAGES */
+
+.dashboard-section .live-transfer {
+  width: 100%;
+  max-width: 850px;
+}
+
+.dashboard-section > .panel {
+  width: 100%;
+}
+
+.dashboard-section .transfer-form {
+  padding: 4px 20px 22px;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 1050px) {
+  .dashboard-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .dashboard-summary {
+    grid-template-columns: 1fr 1fr;
+    gap: 9px;
+  }
+
+  .summary-card {
+    min-height: 120px;
+    padding: 14px;
+  }
+
+  .summary-card > strong {
+    font-size: 19px;
+  }
+
+  .summary-card > svg {
+    width: 18px;
+    height: 18px;
+    right: 11px;
+    top: 12px;
+  }
+
+  .premium-page-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dashboard-action {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .dashboard-action .MuiButton-root {
+    width: 100%;
+  }
+}
+
+/* =========================================
+   RUPEASE - LIVEBANK JSX COMPATIBILITY
+   ========================================= */
+
+/* Sidebar */
+
+.live-bank-layout .sidebar {
+  min-height: 100vh;
+}
+
+.live-bank-layout .sidebar-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 9px;
+  margin: -25px 0 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #f8faff;
+}
+
+.sidebar-user-icon {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  color: var(--brand);
+  background: var(--soft);
+  border-radius: 9px;
+}
+
+.sidebar-user strong,
+.sidebar-user small {
+  display: block;
+}
+
+.sidebar-user strong {
+  color: var(--deep);
+  font-size: 11px;
+}
+
+.sidebar-user small {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 10px;
+  overflow-wrap: anywhere;
+}
+
+.live-bank-layout .sidebar-section-label {
+  margin: 13px 9px 5px;
+  color: #9aa5b8;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .14em;
+}
+
+.live-bank-layout .sidebar-divider {
+  height: 1px;
+  margin: 12px 5px;
+  background: var(--line);
+}
+
+.live-bank-layout .sidebar-logout:hover {
+  color: #b42318;
+  background: #fff1f0;
+}
+
+
+/* Page heading */
+
+.live-bank-layout .page-eyebrow {
+  display: block;
+  margin-bottom: 8px;
+  color: #a4874e;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .15em;
+}
+
+.live-bank-layout .page-head h1 {
+  color: var(--deep);
+}
+
+.live-bank-layout .page-head p {
+  color: var(--muted);
+}
+
+
+/* Dashboard summary grid */
+
+.live-bank-layout .summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 15px;
+  margin-bottom: 29px;
+}
+
+.live-bank-layout .summary-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  min-width: 0;
+  min-height: 145px;
+  padding: 20px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+.live-bank-layout .summary-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.live-bank-layout .summary-card-top svg {
+  flex-shrink: 0;
+  color: #b69a61;
+}
+
+.live-bank-layout .summary-card > strong {
+  color: var(--deep);
+  font-size: clamp(20px, 2vw, 27px);
+  font-weight: 790;
+  letter-spacing: -.04em;
+  overflow-wrap: anywhere;
+}
+
+.live-bank-layout .summary-card > small {
+  color: #8994a7;
+  font-size: 10px;
+}
+
+.live-bank-layout .summary-card.summary-primary {
+  background: linear-gradient(125deg, #10234b, #254b91);
+  border-color: transparent;
+}
+
+.live-bank-layout .summary-primary .summary-card-top,
+.live-bank-layout .summary-primary > small {
+  color: #d2def1;
+}
+
+.live-bank-layout .summary-primary > strong {
+  color: #fff;
+}
+
+.live-bank-layout .summary-primary .summary-card-top svg {
+  color: #e5c77e;
+}
+
+
+/* Dashboard sections */
+
+.live-bank-layout .dashboard-section {
+  margin-bottom: 27px;
+}
+
+.live-bank-layout .section-heading {
+  margin-bottom: 14px;
+}
+
+.live-bank-layout .section-heading p {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+
+/* Quick actions */
+
+.live-bank-layout .quick-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.live-bank-layout .quick-action {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  width: 100%;
+  min-width: 0;
+  padding: 17px;
+  text-align: left;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.live-bank-layout .quick-action:hover {
+  border-color: #c6a76b;
+  background: #fbfcff;
+  transform: translateY(-2px);
+}
+
+.quick-action-icon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  color: var(--brand);
+  background: var(--soft);
+  border-radius: 11px;
+}
+
+.quick-action > span:nth-child(2) {
+  display: grid;
+  flex: 1;
+  min-width: 0;
+  gap: 4px;
+}
+
+.quick-action strong {
+  color: var(--deep);
+  font-size: 13px;
+}
+
+.quick-action small {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.quick-action > svg {
+  flex-shrink: 0;
+  color: #a4874e;
+}
+
+
+/* Activity and history */
+
+.live-bank-layout .panel {
+  margin-bottom: 18px;
+}
+
+.live-bank-layout .view-all-row {
+  display: flex;
+  justify-content: flex-end;
+  margin: -5px 0 24px;
+}
+
+.live-bank-layout .view-all-row .MuiButton-root {
+  color: var(--brand);
+  border-color: var(--line);
+  border-radius: 9px;
+}
+
+
+/* Transfer information */
+
+.live-bank-layout .transfer-information {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 18px;
+  padding: 17px;
+  color: var(--deep);
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.transfer-information > svg {
+  flex-shrink: 0;
+  color: var(--brand);
+}
+
+.transfer-information strong {
+  font-size: 13px;
+}
+
+.transfer-information p {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+
+/* History summary */
+
+.live-bank-layout .history-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.history-summary > div {
+  display: grid;
+  gap: 8px;
+  padding: 17px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.history-summary span {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.history-summary strong {
+  color: var(--deep);
+  font-size: 24px;
+}
+
+
+/* Responsive layout */
+
+@media (max-width: 1050px) {
+  .live-bank-layout .summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .live-bank-layout .sidebar {
+    min-height: auto;
+  }
+
+  .live-bank-layout .sidebar-user {
+    margin: 5px 0;
+  }
+
+  .live-bank-layout .sidebar-section-label {
+    width: 100%;
+  }
+
+  .live-bank-layout .summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+  }
+
+  .live-bank-layout .summary-card {
+    min-height: 125px;
+    padding: 13px;
+  }
+
+  .live-bank-layout .summary-card > strong {
+    font-size: 19px;
+  }
+
+  .live-bank-layout .quick-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .live-bank-layout .history-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .live-bank-layout .page-head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .live-bank-layout .page-head .MuiButton-root {
+    align-self: flex-start;
+  }
+}
+/* FUTURE BANKING MODULES */
+
+.live-bank-layout .sidebar-nav button.nav-coming-soon {
+  opacity: 0.58;
+  cursor: not-allowed;
+  background: #f7f8fb;
+  color: #7d8799;
+}
+
+.live-bank-layout .sidebar-nav button.nav-coming-soon:hover {
+  background: #f7f8fb;
+  color: #7d8799;
+  transform: none;
+}
+
+.coming-soon {
+  margin-left: auto;
+  padding: 4px 7px;
+  border-radius: 5px;
+  background: #f1eadb;
+  color: #92733e;
+  font-size: 9px;
+  font-weight: 700;
+  white-space: nowrap;
+}
